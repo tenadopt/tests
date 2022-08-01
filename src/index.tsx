@@ -1,28 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
-//Вопрос:
+//1. Вопрос:
 //
 // В коде в разных местах допущена одна и та же ошибка.
 //
 // Какое слово должно быть написано вместо ошибочного?
 
-/*
-export const Wrapper  = () => {
-    return <user:city="minsk" />
+
+/*export const Wrapper = () => {
+    return <User city = "minsk" />
 }
 type PropsType = {
     city: string
 }
-export const user: React.FC<PropsType> = (props) => {
+export const User React.FC<PropsType> = (props) => {
     return <div>hello</div>
-}
-*/
+}*/
+
+
 /*
-Что нужно написать вместо ххх, чтобы на экране увидеть:
+2. Что нужно написать вместо ххх, чтобы на экране увидеть:
     😀 Заголовок видео
 
 📼 Контент видео
@@ -32,7 +27,8 @@ export const user: React.FC<PropsType> = (props) => {
 ❗ Ответ дать минимально возможным объёмом кода*/
 
 
-/*import ReactDOM from 'react-dom'
+/*
+import ReactDOM from 'react-dom'
 
 export const YoutubeVideo = () => {
     return <div>
@@ -57,24 +53,27 @@ export const VideoStatistics = () => {
     </div>
 }
 
-ReactDOM.render(<div>VideoHeader</div>,
+ReactDOM.render(<div><YoutubeVideo/></div>,
     document.getElementById('root')
-);*/
+);
+*/
 
-/*Что нужно написать вместо ххх, что бы код работал?*/
+/*3. Что нужно написать вместо ххх, что бы код работал?*/
 
-/*type UserPropsType = {
+/*
+type UserPropsType = {
     name: string
     description: string
 }
 export const User: React.FC<UserPropsType> = (props) => {
     return <div>
         <h1>Имя: {props.name}</h1>
-        //<div>Описание: {props.description}</div>
+        <div>Описание: {props.description}</div>
     </div>
-}*/
+}
+*/
 
-/*Что МИНИМАЛЬНО ДОСТАТОЧНО нужно дописать в строке 8 (cтрока с ошибкой), чтобы не было ошибки*/
+/* 4. Что МИНИМАЛЬНО ДОСТАТОЧНО нужно дописать в строке 8 (cтрока с ошибкой), чтобы не было ошибки*/
 
 
 /*type PropsType = {
@@ -84,23 +83,25 @@ export const User: React.FC<UserPropsType> = (props) => {
 }
 // 'belarus', 'minsk', '53.917501,27.604851'
 export const Wrapper1 = () => {
-    return <PropsComponent1: city='minsk'/>
+    return <PropsComponent1 country='belarus' city='minsk'/>
 }
 
 export const PropsComponent1: React.FC<PropsType> = (props) => {
     return <div>hello</div>
 }*/
 
-/*Что нужно написать вместо xxx и yyy? Ответ дайте через пробел, например:
+/*5. Что нужно написать вместо xxx и yyy? Ответ дайте через пробел, например:
 blabla onClick(props)*/
 
-/*type PagePropsType = {
+/*
+type PagePropsType = {
     age: number
     name: string
     avatarUrl: string
 }
 const Page: React.FC<PagePropsType> = (props) => {
-    return <User a={xxx} n={yyy} />
+    return <User a={props.age} n={props.name} />
+    console.log({a});
 }
 type UserPropsType = {
     a: number
@@ -108,9 +109,10 @@ type UserPropsType = {
 }
 export const User: React.FC<UserPropsType> = (props) => {
     return <div>name: {props.n}, age: {props.a}</div>
-}*/
+}
+*/
 
-/*Что нужно написать вместо XXX и YYY? Ответ дайте через пробел, например:
+/* 6. Что нужно написать вместо XXX и YYY? Ответ дайте через пробел, например:
 car user*/
 
 /*type NewsType = {
@@ -129,23 +131,24 @@ type PagePropsType = {
 export const Page: React.FC<PagePropsType> = (props) => {
     return <div>
         <article>
-            <h1>Название: {props.XXX.title}</h1>
-            <div>{props.XXX.date}</div>
-            <div>{props.XXX.text}</div>
+            <h1>Название: {props.mainArticle.title}</h1>
+            <div>{props.mainArticle.date}</div>
+            <div>{props.mainArticle.text}</div>
         </article>
         <aside>Articles:
             <ul>
-                {props.YYY.map(n => <li>{n.title}, {n.author}</li>)}
+                {props.news.map(n => <li>{n.title}, {n.author}</li>)}
             </ul>
         </aside>
     </div>
 }*/
 
-/*Что нужно написать вместо xxx и yyy, чтобы компонент UserMoney отобразил информацию о двух кошельках (bitcoin и $)?
+/*7. Что нужно написать вместо xxx и yyy, чтобы компонент UserMoney отобразил информацию о двух кошельках (bitcoin и $)?
 
     Ответ дайте через пробел, например: props.x wallets*/
 
-/*type UserWalletType = {
+/*
+type UserWalletType = {
     title: string
     amount: number
 }
@@ -164,16 +167,20 @@ export const UserMoney = () => {
     ]
 
     return <div>
-        <UserWallet wallet={xxx} />
-        <UserWallet wallet={yyy} />
+        <UserWallet wallet={wallets[0]} />
+        <UserWallet wallet={wallets[1]} />
     </div>
-}*/
+}
+*/
 
-/*Что нужно написать вместо xxx yyy zzz, чтобы увидеть ожидаемый результат?
+/* 8. Что нужно написать вместо xxx yyy zzz, чтобы увидеть ожидаемый результат?
 
     Ответ дайте через пробел, пример: a={12} ccc={video.id} d={'hello'}*/
 
-/*import ReactDOM from 'react-dom'
+/*
+import ReactDOM from 'react-dom'
+import {Simulate} from "react-dom/test-utils";
+import timeUpdate = Simulate.timeUpdate;
 
 export const VideoHeader = (props: {videoName: string}) => {
     return <div>
@@ -193,9 +200,9 @@ export const VideoDescription = (props: {videoDescription: string}) => {
 
 export const YoutubeVideo = (props: any) => {
     return <div>
-        <VideoHeader: videoName />
-        <VideoContent: videoContent />
-        <VideoDescription: videoDescription />
+        <VideoHeader videoName = {props.video.title} />
+        <VideoContent videoContent = {props.video.link} />
+        <VideoDescription videoDescription ={props.video.description} />
     </div>
 }
 
@@ -211,22 +218,23 @@ export const App = () => {
 
 ReactDOM.render(<App />,
     document.getElementById('root')
-);*/
+);
+*/
 
 
-/*Что нужно написать вместо XXX YYY ZZZ? Ответ дайте через пробел*/
+/* 9. Что нужно написать вместо XXX YYY ZZZ? Ответ дайте через пробел*/
 
 /*import ReactDOM from 'react-dom'
 
 const CrazyButton = (props: any) => {
 
     const style = {
-        color: props.XXX,
-        backgroundColor: props.YYY
+        color: props.fontColor,
+        backgroundColor: props.bgColor
     }
 
     return <button style={style}>
-        {props.ZZZ}
+        {props.title}
     </button>
 }
 
@@ -268,7 +276,7 @@ const Granny = (props: any) => {
 
 export const App = () => {
     return <div>
-        <Granny name={'Бабуля'} YYY={'Батя'} ZZZ={'Сын'}/>
+        <Granny name={'Бабуля'} fatherName={'Батя'} sonName={'Сын'}/>
     </div>
 }
 
@@ -279,4 +287,4 @@ ReactDOM.render(<App/>,
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+//reportWebVitals();
