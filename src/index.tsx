@@ -1,288 +1,263 @@
-//1. Вопрос:
-//
-// В коде в разных местах допущена одна и та же ошибка.
-//
-// Какое слово должно быть написано вместо ошибочного?
-
-
-/*export const Wrapper = () => {
-    return <User city = "minsk" />
-}
-type PropsType = {
-    city: string
-}
-export const User React.FC<PropsType> = (props) => {
-    return <div>hello</div>
-}*/
-
-
 /*
-2. Что нужно написать вместо ххх, чтобы на экране увидеть:
-    😀 Заголовок видео
+Вопрос:
 
-📼 Контент видео
+    Какой тип правильнее указать вместо "any" при типизации стэйта?
 
-📊 Статистика лайков
+import React, {useState} from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
 
-❗ Ответ дать минимально возможным объёмом кода*/
+function UsersList() {
+    const results = useState<any>(["Bob", "Alex", "Ann"])
+    const users = results[0]
+    const setUsers = results[1]
 
-
-/*
-import ReactDOM from 'react-dom'
-
-export const YoutubeVideo = () => {
-    return <div>
-        <VideoHeader />
-        <VideoContent />
-        <VideoStatistics />
-    </div>
-}
-export const VideoHeader = () => {
-    return <div>
-        😀 Заголовок видео
-    </div>
-}
-export const VideoContent = () => {
-    return <div>
-        📼 Контент видео
-    </div>
-}
-export const VideoStatistics = () => {
-    return <div>
-        📊 Статистика лайков
-    </div>
+    return (
+        <p>Тут будет список пользователей</p>
+    )
 }
 
-ReactDOM.render(<div><YoutubeVideo/></div>,
-    document.getElementById('root')
+ReactDOM.render(
+    <UsersList/>, document.getElementById('root')
 );
-*/
 
-/*3. Что нужно написать вместо ххх, что бы код работал?*/
+// Какой тип правильнее указать вместо "any" при типизации стэйта?
+*/
 
 /*
-type UserPropsType = {
-    name: string
-    description: string
+Вопрос:
+
+    Что вернёт выражение: typeof useState?
+
+import React, {useState} from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+
+function UsersList() {
+    const [users, setUsers] = useState<Array<string>>(["Bob", "Alex", "Ann"])
+
+    return (
+        <p>Тут будет список пользователей!</p>
+    )
 }
-export const User: React.FC<UserPropsType> = (props) => {
-    return <div>
-        <h1>Имя: {props.name}</h1>
-        <div>Описание: {props.description}</div>
-    </div>
-}
+
+ReactDOM.render(
+    <UsersList />, document.getElementById('root')
+);
+
+// Что вернёт выражение: typeof useState?
 */
+/*
+Вопрос:
 
-/* 4. Что МИНИМАЛЬНО ДОСТАТОЧНО нужно дописать в строке 8 (cтрока с ошибкой), чтобы не было ошибки*/
+    Чему равно results.length?
 
+import React, {useState} from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
 
-/*type PropsType = {
-    city: string
-    country: string
-    coords?: string
+function UsersList() {
+    const results = useState<Array<string>>(["Bob", "Alex", "Ann"])
+
+    const users = results[0]
+    const setUsers = results[1]
+
+    return (
+        <p>Тут будет список пользователей</p>
+    )
 }
-// 'belarus', 'minsk', '53.917501,27.604851'
-export const Wrapper1 = () => {
-    return <PropsComponent1 country='belarus' city='minsk'/>
-}
 
-export const PropsComponent1: React.FC<PropsType> = (props) => {
-    return <div>hello</div>
-}*/
+ReactDOM.render(
+    <UsersList/>, document.getElementById('root')
+);
 
-/*5. Что нужно написать вместо xxx и yyy? Ответ дайте через пробел, например:
-blabla onClick(props)*/
+// Чему равно results.length?*/
+
 
 /*
-type PagePropsType = {
-    age: number
-    name: string
-    avatarUrl: string
+Вопрос:
+
+    Что вернёт выражение: Array.isArray(users)?
+
+    copy
+
+import React, {useState} from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+
+function UsersList() {
+    const [users, setUsers] = useState<Array<string>>(["Bob", "Alex", "Ann"])
+
+    return (
+        <p>Тут будет список пользователей</p>
+    )
 }
-const Page: React.FC<PagePropsType> = (props) => {
-    return <User a={props.age} n={props.name} />
-    console.log({a});
-}
-type UserPropsType = {
-    a: number
-    n: string
-}
-export const User: React.FC<UserPropsType> = (props) => {
-    return <div>name: {props.n}, age: {props.a}</div>
-}
+
+ReactDOM.render(
+    <UsersList/>, document.getElementById('root')
+);
+// Что вернёт выражение: Array.isArray(users)?
 */
 
-/* 6. Что нужно написать вместо XXX и YYY? Ответ дайте через пробел, например:
-car user*/
 
-/*type NewsType = {
-    title: string
-    author: string
-}
-type ArticleType = {
-    title: string
-    date: string
-    text: string
-}
-type PagePropsType = {
-    news: NewsType[]
-    mainArticle: ArticleType
-}
-export const Page: React.FC<PagePropsType> = (props) => {
-    return <div>
-        <article>
-            <h1>Название: {props.mainArticle.title}</h1>
-            <div>{props.mainArticle.date}</div>
-            <div>{props.mainArticle.text}</div>
-        </article>
-        <aside>Articles:
+
+/*Что надо вставить вместо ХХХ, чтобы код заработал?
+
+import React, {useState} from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+
+function UsersList() {
+    const [users, setUsers] = useState<Array<string>>(["Bob", "Alex", "Ann"])
+
+    return (
+        <main>
+            <h4>User list:</h4>
             <ul>
-                {props.news.map(n => <li>{n.title}, {n.author}</li>)}
+                { users.ХХХ(user => <li>{user}</li> )}
             </ul>
-        </aside>
-    </div>
-}*/
+        </main>
+    )
+}
 
-/*7. Что нужно написать вместо xxx и yyy, чтобы компонент UserMoney отобразил информацию о двух кошельках (bitcoin и $)?
+ReactDOM.render(
+    <UsersList/>, document.getElementById('root')
+);
+// Что надо вставить вместо ХХХ, чтобы код заработал?*/
 
-    Ответ дайте через пробел, например: props.x wallets*/
+/*Что надо вставить вместо XXX, чтобы код заработал?
+❗ Ответ дать минимально возможным объёмом кода
 
+copy
+
+import React, {useState} from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+
+function UsersList() {
+    const [users, setUsers] = useState<Array<string>>(["Bob", "Alex", "Ann"])
+    const getUser = (user: string) => <li>{user}</li>
+    const usersList = users.map(XXX)
+
+    return (
+        <main>
+            <h4>User list:</h4>
+            <ul>
+                {usersList}
+            </ul>
+        </main>
+    )
+}
+
+ReactDOM.render(
+    <UsersList/>, document.getElementById('root')
+);
+
+// Что надо вставить вместо XXX, чтобы код заработал?
+// ❗ Ответ дать минимально возможным объёмом кода*/
 /*
-type UserWalletType = {
-    title: string
-    amount: number
-}
-type UserWalletPropsType = {
-    wallet: UserWalletType
+Вопрос:
+
+    Что вернёт выражение: Array.isArray(usersList)?
+
+import React, {useState} from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+
+function UsersList() {
+    const [users, setUsers] = useState<Array<string>>(["Bob", "Alex", "Ann"])
+    const getUser = (user: string) => <li>{user}</li>
+    const usersList = users.map(getUser)
+
+    return (
+        <main>
+            <h4>User list:</h4>
+            <ul>
+                {usersList}
+            </ul>
+        </main>
+    )
 }
 
-export const UserWallet: React.FC<UserWalletPropsType> = (props) => {
-    return <div>title: {props.wallet.title}, amount: {props.wallet.amount}</div>
+ReactDOM.render(
+    <UsersList/>, document.getElementById('root')
+);
+// Что вернёт выражение: Array.isArray(usersList)?*/
+
+/*Что вернёт выражение: typeof getUser?
+
+import React, {useState} from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+
+function UsersList() {
+    const [users, setUsers] = useState<Array<string>>(["Bob", "Alex", "Ann"])
+    const getUser = (user: string) => <li>{user}</li>
+
+    return (
+        <main>
+            <h4>User list:</h4>
+            <ul>
+                {users.map(getUser)}
+            </ul>
+        </main>
+    )
 }
 
-export const UserMoney = () => {
-    const wallets = [
-        {title: 'bitcoin', amount: 1},
-        {title: '$', amount: 100}
+ReactDOM.render(
+    <UsersList/>, document.getElementById('root')
+);
+// Что вернёт выражение: typeof getUser?
+
+Вопрос:
+
+    Что надо написать вместо XXX, чтобы код работал?
+❗ Ответ дать минимально возможным объёмом кода
+
+import React, {useState} from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+
+type UserType = {
+    id: number
+    name: string
+    age: number
+}
+
+function User(props: UserType) {
+    return (
+        <li>User {props.name}: {props.age} y.o.</li>
+    )
+}
+
+function UsersList() {
+    const state = [
+        {id: 1, name: "Bob", age: 34},
+        {id: 2, name: "Alex", age: 25},
+        {id: 3, name: "Ann", age: 30},
+        {id: 4, name: "John", age: 23},
+    ]
+    const users = [
+        {id: 1, userName: "Bob", age: 34},
+        {id: 2, userName: "Alex", age: 25},
+        {id: 3, userName: "Ann", age: 30},
+        {id: 4, userName: "John", age: 23},
     ]
 
-    return <div>
-        <UserWallet wallet={wallets[0]} />
-        <UserWallet wallet={wallets[1]} />
-    </div>
-}
-*/
-
-/* 8. Что нужно написать вместо xxx yyy zzz, чтобы увидеть ожидаемый результат?
-
-    Ответ дайте через пробел, пример: a={12} ccc={video.id} d={'hello'}*/
-
-/*
-import ReactDOM from 'react-dom'
-import {Simulate} from "react-dom/test-utils";
-import timeUpdate = Simulate.timeUpdate;
-
-export const VideoHeader = (props: {videoName: string}) => {
-    return <div>
-        😀 {props.videoName}
-    </div>
-}
-export const VideoContent = (props: {videoContent: string}) => {
-    return <div>
-        📼 <a href={props.videoContent}>{props.videoContent}</a>
-    </div>
-}
-export const VideoDescription = (props: {videoDescription: string}) => {
-    return <div>
-        📑 {props.videoDescription}
-    </div>
+    const [usersList, setUsersList] = useState<Array<UserType>>(XXX)
+    return (
+        <main>
+            <h5>User list:</h5>
+            <p>Тут будет список пользователей</p>
+        </main>
+    )
 }
 
-export const YoutubeVideo = (props: any) => {
-    return <div>
-        <VideoHeader videoName = {props.video.title} />
-        <VideoContent videoContent = {props.video.link} />
-        <VideoDescription videoDescription ={props.video.description} />
-    </div>
-}
-
-export const App = () => {
-    const video = {
-        title: 'Samurai way',
-        link: 'https://www.youtube.com/watch?v=gb7gMluAeao&list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8',
-        description: 'Best free react-course'
-    }
-
-    return <YoutubeVideo video={video} />
-}
-
-ReactDOM.render(<App />,
-    document.getElementById('root')
+ReactDOM.render(
+    <UsersList/>, document.getElementById('root')
 );
-*/
-
-
-/* 9. Что нужно написать вместо XXX YYY ZZZ? Ответ дайте через пробел*/
-
-/*import ReactDOM from 'react-dom'
-
-const CrazyButton = (props: any) => {
-
-    const style = {
-        color: props.fontColor,
-        backgroundColor: props.bgColor
-    }
-
-    return <button style={style}>
-        {props.title}
-    </button>
-}
-
-export const App = () => {
-    return <div>
-        <CrazyButton title={'delete'} fontColor={'white'} bgColor={'red'}/>
-        <CrazyButton title={'add'} fontColor={'white'} bgColor={'green'}/>
-    </div>
-}
-
-ReactDOM.render(<App/>,
-    document.getElementById('root')
-)*/
-
-/*Что нужно написать вместо XXX YYY ZZZ? Ответ дайте через пробел*/
-
-/*import ReactDOM from 'react-dom'
-
-const Son = (props: any) => {
-    return <div>
-        I am son. My name is {props.name}
-    </div>
-}
-
-
-const Father = (props: any) => {
-    return <div>
-        I am father. My name is {props.name}
-        <Son name={props.sonName} />
-    </div>
-}
-
-const Granny = (props: any) => {
-    return <div>
-        I am granny. My name is {props.name}
-        <Father name={props.fatherName} sonName={props.sonName} />
-    </div>
-}
-
-export const App = () => {
-    return <div>
-        <Granny name={'Бабуля'} fatherName={'Батя'} sonName={'Сын'}/>
-    </div>
-}
-
-ReactDOM.render(<App/>,
-    document.getElementById('root')
-)*/
+// Что надо написать вместо XXX, чтобы код работал?
+// ❗ Ответ дать минимально возможным объёмом кода*/
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
